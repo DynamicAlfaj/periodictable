@@ -6,6 +6,176 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="./style.css">
 
+  
+  <!--Meta--!>
+  <meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<link expr:href='data:blog.url' hreflang='x-default' rel='alternate'/>
+<meta content='all-language' http-equiv='Content-Language'/>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>
+<meta content='public' http-equiv='Cache-control'/>
+<meta content='India' name='geo.placename'/>
+<meta content='in' name='geo.country'/>
+<meta content='English' name='language'/>
+<meta content='global' name='target'/>
+<meta content='global' name='distribution'/>
+<meta content='general' name='rating'/>
+<meta content='1 days' name='revisit-after'/>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='in' property='og:locale'/>
+<meta content='en_US' property='og:locale:alternate'/>
+<meta content='sitelinkssearchbox' name='google'/>
+
+<!-- Blog Title --> 
+<b:if cond='data:view.isSingleItem'>
+<title>&#8730; <data:blog.pageName/></title>
+<b:elseif cond='data:view.isHomepage'/>
+<title><data:blog.title/></title>
+<b:elseif cond='data:view.search.label'/>
+<title><data:blog.pageTitle/></title>
+<b:elseif cond='data:view.search.query'/>
+<title><data:view.search.resultsMessage/></title>
+<b:elseif cond='data:view.search and !data:view.search.label and !data:view.search.query'/>
+<title><data:blog.pageTitle/></title>
+<b:elseif cond='data:view.isArchive'/>
+<title><data:view.archive.rangeMessage/></title>
+<b:elseif cond='data:view.isError'/>
+<title>ERROR 404</title>
+</b:if>
+<b:if cond='data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery'>
+   <meta content='noindex/nofollow' name='robots'/>
+   <meta content='noindex/nofollow' name='googlebot'/>
+   <b:elseif cond='data:view.isSingleItem or data:view.isHomepage'/>
+   <meta content='index, follow' name='robots'/>
+   <meta content='index, follow' name='googlebot'/>
+   <meta content='follow, all' name='Googlebot-Image'/>
+   <meta content='follow, all' name='msnbot'/>
+   <meta content='follow, all' name='Slurp'/>
+   <meta content='follow, all' name='ZyBorg'/>
+   <meta content='follow, all' name='Scooter'/>
+   <meta content='max-snippet:-1, max-image-preview:large, max-video-preview:-1' name='robots'/>
+   <meta content='all' name='spiders'/>
+   <meta content='all' name='WEBCRAWLERS'/>
+</b:if>
+<meta content='blogger' name='generator'/>
+<link href='https://www.blogger.com/openid-server.g' rel='openid.server'/>
+<link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
+<link expr:href='data:blog.url.canonical.jsonEscaped' rel='canonical'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'/>
+<link expr:href='&quot;https://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+<meta expr:content='data:blog.homepageUrl + &quot;sitemap.xml&quot;' rel='sitemap' type='application/xml'/>
+<b:if cond='data:view.isMultipleItems'>
+   <meta expr:content='data:blog.metaDescription' name='description'/>
+   <b:elseif cond='data:view.isSingleItem'/>
+   <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' name='description'/>
+      <b:else/>
+      <meta expr:content='data:blog.title' name='description'/>
+   </b:if>
+</b:if>
+<b:if cond='data:view.isMultipleItems'>
+   <meta content='Periodic table,periodic table of elements,periodic table pdf,periodic table with names,periodic table with atomic mass,periodic table blocks,periodic table chart,periodic table image,periodic table of elements with names and symbols,periodic table information,periodic table with names and atomic mass,periodic table with names and symbols and atomic number, pegasus alfaj edu,Pegasus Alfaj, Alfaj Mahabri' name='keywords'/>
+   <b:elseif cond='data:view.isSingleItem'/>
+   <meta expr:content='data:blog.pageName' name='keywords'/>
+</b:if>
+<b:if cond='data:view.isPost'>
+   <b:if cond='data:blog.postImageThumbnailUrl'>
+      <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'/>
+   </b:if>
+</b:if>
+
+<!-- Open Graph --> 
+<b:if cond='data:view.isHomepage'>
+   <b:if cond='data:view.isSingleItem'>
+      <b:if cond='data:blog.url'>
+         <meta expr:content='data:blog.url' property='og:url'/>
+      </b:if>
+      <meta expr:content='data:blog.title' property='og:site_name'/>
+   </b:if>
+</b:if>
+<b:if cond='data:view.isPost'>
+   <meta expr:content='data:blog.pageName' property='og:title'/>
+   <meta expr:content='data:blog.pageName' name='twitter:title'/>
+   <meta content='article' property='og:type'/>
+   <b:else/>
+   <meta expr:content='data:blog.title' property='og:title'/>
+   <meta content='website' property='og:type'/>
+   <meta expr:content='data:blog.pageTitle' property='og:image:alt'/>
+</b:if>
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<b:if cond='data:blog.postImageUrl'>
+   <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+   <b:else/>
+   <b:if cond='data:blog.postImageThumbnailUrl'>
+      <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+      <b:else/>
+      <meta content='https://drive.google.com/uc?id=19qGMTwq33idjGGsAav1wnTbIUiKcPfWV' property='og:image'/>
+   </b:if>
+</b:if>
+<b:if cond='data:view.isMultipleItems'>
+   <meta expr:content='data:blog.metaDescription' property='og:description'/>
+   <b:elseif cond='data:view.isSingleItem'/>
+   <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' property='og:description'/>
+      <b:else/>
+      <meta expr:content='data:blog.title' property='og:description'/>
+   </b:if>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:if cond='data:view.isSingleItem'>
+   <meta content='https://www.facebook.com/###' property='article:author'/>
+   <meta content='https://www.facebook.com/###' property='article:publisher'/>
+</b:if>
+
+<!-- Meta Owner--> 
+<meta content='Alfaj ' name='Author'/>
+<link href='https://www.facebook.com/###' rel='me'/>
+<link href='https://www.facebook.com/###' rel='author'/>
+<link href='https://www.facebook.com/###' rel='publisher'/>
+<meta content='###' property='fb:admins'/>
+<meta content='###' property='fb:pages'/>
+<meta content='###' property='fb:app_id'/>
+<meta content='@###' name='twitter:site'/>
+<meta content='@###' name='twitter:creator'/>
+<meta expr:content='data:blog.title' name='copyright'/>
+
+<!-- meta twitter--> 
+<b:if cond='data:view.isMultipleItems'>
+   <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+   <meta expr:content='data:blog.pageTitle' name='twitter:image:alt'/>
+   <b:else/>
+   <meta expr:content='data:blog.pageName' name='twitter:title'/>
+   <meta expr:content='data:blog.pageName' name='twitter:image:alt'/>
+</b:if>
+<b:if cond='data:view.isMultipleItems'>
+   <meta content='###.png' name='twitter:image'/>
+   <b:else/>
+   <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+</b:if>
+<meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+<meta content='summary_large_image' name='twitter:card'/>
+
+<!-- Meta Icon --> 
+<link href='/favicon.io' rel='icon' type='image/x-icon'/>
+<link href='###.png' rel='apple-touch-icon'/>
+<link href='###.png' rel='apple-touch-icon' sizes='57x57'/>
+<link href='###.png' rel='apple-touch-icon' sizes='72x72'/>
+<link href='###.png' rel='apple-touch-icon' sizes='76x76'/>
+<link href='###.png' rel='apple-touch-icon' sizes='114x114'/>
+<link href='###.png' rel='apple-touch-icon' sizes='120x120'/>
+<link href='###.png' rel='apple-touch-icon' sizes='144x144'/>
+<link href='###.png' rel='apple-touch-icon' sizes='152x152'/>
+<link href='###.xpng' rel='apple-touch-icon' sizes='180x180'/>
+<meta content='#fff' name='theme-color'/>
+<meta content='#fff' name='msapplication-navbutton-color'/>
+<meta content='#fff' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='yes' name='apple-mobile-web-app-capable'/>
+<include expiration='7d' path='*.css'/> <include expiration='7d' path='*.js'/> <include expiration='3d' path='*.gif'/> <include expiration='3d' path='*.jpeg'/> <include expiration='3d' path='*.jpg'/> <include expiration='3d' path='*.png'/> <include expiration='3d' path='*.json'/> <include expiration='3d' path='*.ico'/> <include expiration='3d' path='*.ar.min.json'/> <include expiration='7d' path='/assets/**.css'/> <include expiration='7d' path='/assets/**.js'/> <include expiration='3d' path='/assets/**.gif'/> <include expiration='3d' path='/assets/**.jpeg'/> <include expiration='3d' path='/assets/**.jpg'/> <include expiration='3d' path='/assets/**.png'/> <include expiration='7d' path='/assets/**.json'/> <include expiration='7d' path='/assets/**.ar.min.json'/>
+<link href='//adservice.google.ca' rel='dns-prefetch'/><link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/><link href='//adservice.google.com' rel='dns-prefetch'/><link href='//www.googletagservices.com' rel='dns-prefetch'/><link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/><link href='//maxcdn.bootstrapcdn.com' rel='dns-prefetch'/><link href='//resources.blogblog.com' rel='dns-prefetch'/><link href='//fonts.googleapis.com' rel='dns-prefetch'/><link href='//disqus.com' rel='dns-prefetch'/><link href='//github.com' rel='dns-prefetch'/><link href='//cdn.rawgit.com' rel='dns-prefetch'/><link href='//1.bp.blogspot.com' rel='dns-prefetch'/><link href='//2.bp.blogspot.com' rel='dns-prefetch'/><link href='//3.bp.blogspot.com' rel='dns-prefetch'/><link href='//4.bp.blogspot.com' rel='dns-prefetch'/><link href='//www.blogger.com' rel='dns-prefetch'/><link href='//www.facebook.com' rel='dns-prefetch'/><link href='//plus.google.com' rel='dns-prefetch'/><link href='//twitter.com' rel='dns-prefetch'/><link href='//www.youtube.com' rel='dns-prefetch'/><link href='//feedburner.google.com' rel='dns-prefetch'/><link href='//feeds.feedburner.com' rel='dns-prefetch'/><link href='//platform.twitter.com' rel='dns-prefetch'/><link href='//apis.google.com' rel='dns-prefetch'/><link href='//connect.facebook.net' rel='dns-prefetch'/><link href='//www.google-analytics.com' rel='dns-prefetch'/><link href='//www.gstatic.com' rel='dns-prefetch'/><link href='//static.xx.fbcdn.net' rel='dns-prefetch'/><link href='//tpc.googlesyndication.com' rel='dns-prefetch'/><link href='//syndication.twitter.com' rel='dns-prefetch'/><link href='//fonts.gstatic.com' rel='dns-prefetch'/><link href='https://lh3.googleusercontent.com' rel='dns-prefetch'/><link href='https://tpc.googlesyndication.com' rel='dns-prefetch'/><link href='https://img.youtube.com' rel='dns-prefetch'/><link href='https://www.googletagmanager.com' rel='dns-prefetch'/><link href='https://adservice.google.co.id/' rel='dns-prefetch'/><link href='//cdnjs.cloudflare.com/' rel='dns-prefetch'/><link href='//resources.blogblog.com/' rel='dns-prefetch'/><link href='http://www.google.com' rel='dns-prefetch'/><link href='http://www.w3.org' rel='dns-prefetch'/><link href='https://statically.io/' rel='dns-prefetch'/><link href='https://ajax.googleapis.com' rel='dns-prefetch'/><link href='https://cdnjs.cloudflare.com' rel='dns-prefetch'/><link href='https://apis.google.com' rel='dns-prefetch'/><link href='https://cdn.rawgit.com' rel='dns-prefetch'/><link href='https://www.gstatic.com' rel='dns-prefetch'/>
+  
+  
 </head>
 <body>
 <!-- partial:index.partial.html -->
